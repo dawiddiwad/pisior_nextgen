@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8598458181981349798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8598458181981349792}
+  - component: {fileID: 8598458181981349793}
+  m_Layer: 2
+  m_Name: GameControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8598458181981349792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598458181981349798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11063447, y: -0.37358934, z: -17.822863}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8598458181981349793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598458181981349798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40ae0b296726ec4590b01416dddaa13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesList:
+  - {fileID: 6419705098021156807, guid: b3a2bdb34e1b2694a8a5d4e92ef43272, type: 3}
+  - {fileID: 4497079154028396975, guid: 8a648a2dec6cc514bad9d2b526e76547, type: 3}
+  - {fileID: 1202813406752681150, guid: 57604f7d68e73604b824d2be34658dd7, type: 3}
+  - {fileID: 8570925300266496912, guid: e857a93131e70834f9fc20cb6d6a947b, type: 3}
+  - {fileID: 7300937301328993764, guid: 13cd1aefef22236489fe08b21ec377ef, type: 3}
+  hitText: {fileID: 437006781755811777, guid: 6c4f01b8c38a8ac4bae4891212b74ce7, type: 3}
+  gameOver: {fileID: 3504437976270558035, guid: b6d26a8f0d9635a46ab11500417f5aa4,
+    type: 3}
+  winner: {fileID: 9156532278623766851, guid: c45cc660aa6848d4c8d4cd0f60c4d227, type: 3}
+  player: {fileID: 7876734864065461071, guid: 5799d958e0aedbd49bb2b54f172b0837, type: 3}
+  initialEnemiesAmount: 10
