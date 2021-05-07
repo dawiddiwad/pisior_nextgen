@@ -12,8 +12,8 @@ public class PostProcessController : MonoBehaviour
     {
         float playerHealthPrcnt = (float)GameController.playerController.getHealthPrcnt();
         chromaticAberration.intensity.value = playerHealthPrcnt > 0 ?
-            (float)(0.1m / (decimal)playerHealthPrcnt * 1.5m)
-            : 1;
+            (float)(0.1m / (decimal)playerHealthPrcnt * 0.5m)
+            : 0.4f;
     }
     private void OnEnable()
     {
