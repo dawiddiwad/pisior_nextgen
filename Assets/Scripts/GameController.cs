@@ -119,10 +119,11 @@ public class GameController : MonoBehaviour
 
     private int calculateEnemyHitScore(float magnitude)
     {
-        return Mathf.RoundToInt(Mathf.RoundToInt(magnitude) * 100
+        int score = Mathf.RoundToInt(Mathf.RoundToInt(magnitude) * 100
             * (float)playerController.intialHealth
             / (float)playerController.getHealth())
             ;
+        return score > 0 ? score : 100;
     }
 
     private int calculateEnemyHealthDelta(float magnitude)

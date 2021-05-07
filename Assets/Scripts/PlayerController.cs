@@ -38,10 +38,10 @@ public class PlayerController : MonoBehaviour
 
     public int reduceHealthBy(int points)
     {
-        this.health -= points;
+        health -= points;
         if (getHealthPrcnt() > 1)
         {
-            this.health = intialHealth;
+            health = intialHealth;
         }
         return getHealth();
     }
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     public int getHealth()
     {
-        return this.health;
+        return health >= 0 ? health : 0;
     }
 
     public decimal getHealthPrcnt()
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
     private void checkHealth()
     {
-        if (health <= 0)
+        if (getHealth() <= 0)
         {
             GameObject.Find("PlayerHealth").GetComponent<PlayerHealthDisplayController>().setHealth(0);
             GameObject vfx = Pool.Instance.Get(Pool.GameObjectType.vfxRocketExplosion);
