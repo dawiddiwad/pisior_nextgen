@@ -18,6 +18,7 @@ public class Pool : MonoBehaviour
     public GameObject vfxEnemyExplosionPrefab;
     public GameObject vfxRocketExplosionPrefab;
     public GameObject vfxCollisionPrefab;
+    public GameObject vfxCollisionHealthPickupPrefab;
     public GameObject hitTextPrefab;
 
     private Dictionary<GameObjectType,  Stack<GameObject>>  stacks =        new Dictionary<GameObjectType,  Stack<GameObject>>();
@@ -35,6 +36,7 @@ public class Pool : MonoBehaviour
         pickupHealth,
         vfxEnemyExplosion,
         vfxRocketExplosion,
+        vfxCollisionHealthPickup,
         vfxCollision,
         hitText
     };
@@ -45,31 +47,33 @@ public class Pool : MonoBehaviour
         Instance = this;
         typeMap = new Dictionary<GameObjectType, GameObject>
         {
-            {GameObjectType.enemy1,             enemy1Prefab},
-            {GameObjectType.enemy2,             enemy2Prefab},
-            {GameObjectType.enemy3,             enemy3Prefab},
-            {GameObjectType.enemy4,             enemy4Prefab},
-            {GameObjectType.enemy5,             enemy5Prefab},
-            {GameObjectType.rocket,             rocketPrefab},
-            {GameObjectType.hitText,            hitTextPrefab},
-            {GameObjectType.pickupHealth,       pickupHealthPrefab},
-            {GameObjectType.vfxEnemyExplosion,  vfxEnemyExplosionPrefab},
-            {GameObjectType.vfxRocketExplosion, vfxRocketExplosionPrefab},
-            {GameObjectType.vfxCollision,       vfxCollisionPrefab}
+            {GameObjectType.enemy1,                     enemy1Prefab},
+            {GameObjectType.enemy2,                     enemy2Prefab},
+            {GameObjectType.enemy3,                     enemy3Prefab},
+            {GameObjectType.enemy4,                     enemy4Prefab},
+            {GameObjectType.enemy5,                     enemy5Prefab},
+            {GameObjectType.rocket,                     rocketPrefab},
+            {GameObjectType.hitText,                    hitTextPrefab},
+            {GameObjectType.pickupHealth,               pickupHealthPrefab},
+            {GameObjectType.vfxEnemyExplosion,          vfxEnemyExplosionPrefab},
+            {GameObjectType.vfxRocketExplosion,         vfxRocketExplosionPrefab},
+            {GameObjectType.vfxCollisionHealthPickup,   vfxCollisionHealthPickupPrefab},
+            {GameObjectType.vfxCollision,               vfxCollisionPrefab}
         };
         poolSizeMap = new Dictionary<GameObjectType, int>
         {
-            {GameObjectType.enemy1,             10},
-            {GameObjectType.enemy2,             10},
-            {GameObjectType.enemy3,             10},
-            {GameObjectType.enemy4,             10},
-            {GameObjectType.enemy5,             10},
-            {GameObjectType.rocket,             10},
-            {GameObjectType.hitText,            10},
-            {GameObjectType.pickupHealth,       10},
-            {GameObjectType.vfxEnemyExplosion,  10},
-            {GameObjectType.vfxRocketExplosion, 10},
-            {GameObjectType.vfxCollision,       30}
+            {GameObjectType.enemy1,                     10},
+            {GameObjectType.enemy2,                     10},
+            {GameObjectType.enemy3,                     10},
+            {GameObjectType.enemy4,                     10},
+            {GameObjectType.enemy5,                     10},
+            {GameObjectType.rocket,                     10},
+            {GameObjectType.hitText,                    10},
+            {GameObjectType.pickupHealth,               10},
+            {GameObjectType.vfxEnemyExplosion,          10},
+            {GameObjectType.vfxRocketExplosion,         10},
+            {GameObjectType.vfxCollisionHealthPickup,   10},
+            {GameObjectType.vfxCollision,               30}
         };
         poolReady = InitializePools();
     }

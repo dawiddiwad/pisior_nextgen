@@ -7,6 +7,10 @@ public class Pickup : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
+        GameObject vfx = Pool.Instance.Get(Pool.GameObjectType.vfxCollisionHealthPickup);
+        vfx.transform.position = transform.position;
+        vfx.transform.rotation = transform.rotation;
+
         if (collision.gameObject.tag == "Player")
         {
             HandlePlayerCollison(collision);
