@@ -221,6 +221,9 @@ public class PlayerController : MonoBehaviour
                 if (!GameController.gameEnded && !(getHealthPrcnt() == 1))
                 {
                     OnHealthChange?.Invoke(increaseHealthBy(20));
+                    GameObject hitText = Pool.Instance.Get(Pool.GameObjectType.hitText);
+                    hitText.GetComponent<HitTextController>()
+                        .Setup(20, transform.position, HitTextController.UNIT.HP);
                 }
             }
         }
