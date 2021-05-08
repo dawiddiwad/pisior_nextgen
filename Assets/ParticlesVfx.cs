@@ -1,11 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ParticlesVfx : MonoBehaviour
 {
-   public void OnParticleSystemStopped()
+    Transform parent;
+
+    private void OnEnable()
     {
-        Pool.Instance.Return(gameObject);
+        parent = transform.parent;
+    }
+
+    public void OnParticleSystemStopped()
+    {
+        if (parent == null)
+        {
+            Pool.Instance.Return(gameObject);
+        }
+        else
+        {
+            parent?.GetComponent<Pickup>().OnVfxFinished();
+        }
     }
 }
