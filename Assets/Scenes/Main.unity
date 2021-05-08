@@ -356,6 +356,8 @@ MonoBehaviour:
     type: 3}
   vfxCollisionPrefab: {fileID: 5806174997293907363, guid: a980156c063f7834f8133cadbd3f6a7c,
     type: 3}
+  vfxCollisionHealthPickupPrefab: {fileID: 8750741972574465388, guid: f716f5751f7f448b5bb217c7d04b8ad8,
+    type: 3}
   hitTextPrefab: {fileID: 437006781755811777, guid: 6c4f01b8c38a8ac4bae4891212b74ce7,
     type: 3}
 --- !u!4 &641365749
