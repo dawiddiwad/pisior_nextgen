@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8322434462014605900}
   m_Layer: 1
   m_Name: collisionVFX rocket explosion
-  m_TagString: Untagged
+  m_TagString: explosion_vfx
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4824,7 +4824,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 656146088206801210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c55a540dbbe2a9f429d62a17882190d0, type: 3}
+  m_Script: {fileID: 11500000, guid: fbc9a21d9b65b4758a9f52e6fd87cbd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 656146088206801210}

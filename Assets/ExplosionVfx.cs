@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticlesVfx : MonoBehaviour
+public class ExplosionVfx : MonoBehaviour
 {
     Transform parent;
 
@@ -20,7 +20,7 @@ public class ParticlesVfx : MonoBehaviour
         }
         else
         {
-            parent?.GetComponent<Pickup>().OnVfxFinished();
+            parent?.GetComponent<IDestroyVfx>()?.OnDestroyVfxFinished();
         }
     }
 }

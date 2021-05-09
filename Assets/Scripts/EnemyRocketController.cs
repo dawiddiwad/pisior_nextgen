@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyRocketController : MonoBehaviour
+public class EnemyRocketController : NPC, IDestroyVfx
 {
     public GameObject explosionVFX;
     public GameObject pickupHealth;
@@ -13,6 +13,7 @@ public class EnemyRocketController : MonoBehaviour
 
     IEnumerator EnableCollider()
     {
+        collider2Ds.enabled = false;
         yield return new WaitForSeconds(0.5f);
         collider2Ds.enabled = true;
     }
@@ -42,17 +43,16 @@ public class EnemyRocketController : MonoBehaviour
             SlerpTowards(targetQuaternion);
         }
     }
-    // Start is called before the first frame update
+
     void OnEnable()
     {
+        PrepareDestroyVfx();
         player = GameController.playerInstance;
         collider2Ds = GetComponent<BoxCollider2D>();
-        collider2Ds.enabled = false;
         _ = StartCoroutine(EnableCollider());
         rotateTowards(player, true);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         rotateTowards(player, false);
@@ -62,17 +62,39 @@ public class EnemyRocketController : MonoBehaviour
     {
         if (collision.gameObject.tag == tag && GetInstanceID() > collision.gameObject.GetInstanceID())
         {
+            SetInteractive(false);
             GameObject pickupHealth = Pool.Instance.Get(Pool.GameObjectType.pickupHealth);
             pickupHealth.transform.position = collision.transform.position;
             pickupHealth.transform.rotation = transform.rotation;
+            Destroy();
         }
         else
         {
-            //_ = Instantiate(explosionVFX, transform.position, transform.rotation);
-            GameObject explosionVFX = Pool.Instance.Get(Pool.GameObjectType.vfxRocketExplosion);
-            explosionVFX.transform.position = transform.position;
-            explosionVFX.transform.rotation = transform.rotation;
+            TriggerDestroyVfx();
         }
+    }
+
+    public void PrepareDestroyVfx()
+    {
+        SetInteractive(true);
+        SetChildsActive(true, gameObject.tag);
+        SetChildsActive(false, explosionVfxTag);
+    }
+
+    public void TriggerDestroyVfx()
+    {
+        SetInteractive(false);
+        SetChildsActive(false, gameObject.tag);
+        SetChildsActive(true, explosionVfxTag);
+    }
+
+    public void OnDestroyVfxFinished()
+    {
+        Destroy();
+    }
+
+    private void Destroy()
+    {
         Pool.Instance.Return(gameObject);
     }
 }
