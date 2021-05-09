@@ -15,8 +15,6 @@ public class Pool : MonoBehaviour
     public GameObject enemy5Prefab;
     public GameObject rocketPrefab;
     public GameObject pickupHealthPrefab;
-    public GameObject vfxEnemyExplosionPrefab;
-    public GameObject vfxRocketExplosionPrefab;
     public GameObject vfxCollisionPrefab;
     public GameObject hitTextPrefab;
 
@@ -33,8 +31,6 @@ public class Pool : MonoBehaviour
         enemy5,
         rocket,
         pickupHealth,
-        vfxEnemyExplosion,
-        vfxRocketExplosion,
         vfxCollision,
         hitText
     };
@@ -53,8 +49,6 @@ public class Pool : MonoBehaviour
             {GameObjectType.rocket,                     rocketPrefab},
             {GameObjectType.hitText,                    hitTextPrefab},
             {GameObjectType.pickupHealth,               pickupHealthPrefab},
-            {GameObjectType.vfxEnemyExplosion,          vfxEnemyExplosionPrefab},
-            {GameObjectType.vfxRocketExplosion,         vfxRocketExplosionPrefab},
             {GameObjectType.vfxCollision,               vfxCollisionPrefab}
         };
         poolSizeMap = new Dictionary<GameObjectType, int>
@@ -67,8 +61,6 @@ public class Pool : MonoBehaviour
             {GameObjectType.rocket,                     10},
             {GameObjectType.hitText,                    10},
             {GameObjectType.pickupHealth,               10},
-            {GameObjectType.vfxEnemyExplosion,          10},
-            {GameObjectType.vfxRocketExplosion,         10},
             {GameObjectType.vfxCollision,               30}
         };
         poolReady = InitializePools();

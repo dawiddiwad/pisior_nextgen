@@ -13,7 +13,7 @@ public abstract class NPC : MonoBehaviour
     protected void SetInteractive(bool state)
     {
         GetComponent<SpriteRenderer>().enabled = state;
-        GetComponent<BoxCollider2D>().enabled = state;
+        GetComponent<Collider2D>().enabled = state;
         GetComponent<Rigidbody2D>().simulated = state;
     }
 

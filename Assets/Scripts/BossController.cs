@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Timers;
 
-public class BossController : MonoBehaviour
+public class BossController : NPC, IDestroyVfx
 {
     // Start is called before the first frame update
     public int initialHealth = 100;
@@ -13,7 +13,6 @@ public class BossController : MonoBehaviour
     private int health;
     private GameObject player;
 
-    private Timer timer;
     public int getHealth()
     {
         return health;
@@ -61,6 +60,7 @@ public class BossController : MonoBehaviour
     {
         health = initialHealth;
         _ = StartCoroutine(SpawnRocket(getRocketSpawnTimeMin(), getRocketSpawnTimeMax()));
+        PrepareDestroyVfx();
     }
 
     // Update is called once per frame
@@ -68,9 +68,30 @@ public class BossController : MonoBehaviour
     {
         if (health <= 0)
         {
-            GameObject vfx = Pool.Instance.Get(Pool.GameObjectType.vfxEnemyExplosion);
-            vfx.transform.position = transform.position;
-            Pool.Instance.Return(gameObject);
+            TriggerDestroyVfx();
         }
+    }
+
+    public void PrepareDestroyVfx()
+    {
+        SetChildsActive(false);
+        SetInteractive(true);
+    }
+
+    public void TriggerDestroyVfx()
+    {
+        SetInteractive(false);
+        SetChildsActive(true);
+    }
+
+    public void OnDestroyVfxFinished()
+    {
+        SetChildsActive(false);
+        Destroy();
+    }
+
+    private void Destroy()
+    {
+        Pool.Instance.Return(gameObject);
     }
 }

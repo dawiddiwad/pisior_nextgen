@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject DieVfx;
+
     public float forceFactorOnMove = 10;
     public float forceFactorOnRotate = 10;
     public float maxLinearVelocity = 50;
     public float maxAngularVelocity = 1000;
     public float shotImpulse = 500;
     public int intialHealth = 100;
-
-    public GameObject instantTest;
 
     public delegate void PlayerHitEnemyBodyVFX(GameObject enemy, Vector2 relativeVelocity,
         Vector3 collisionPosition);
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         if (getHealth() <= 0)
         {
             GameObject.Find("PlayerHealth").GetComponent<PlayerHealthDisplayController>().setHealth(0);
-            GameObject vfx = Pool.Instance.Get(Pool.GameObjectType.vfxRocketExplosion);
+            GameObject vfx = GameObject.Instantiate(DieVfx);
             vfx.transform.position = transform.position;
             Destroy(gameObject);
         }

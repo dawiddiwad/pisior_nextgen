@@ -16,7 +16,7 @@ public class ExplosionVfx : MonoBehaviour
     {
         if (parent == null)
         {
-            Pool.Instance.Return(gameObject);
+            Destroy(gameObject);
         }
         else
         {
