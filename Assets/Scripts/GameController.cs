@@ -32,7 +32,6 @@ public class GameController : MonoBehaviour
     public static event GameResumed onGameResume;
     public static event GameEnded OnGameEnd;
 
-
     public int initialEnemiesAmount = 5;
     private static int difficultyFactor = 2;
 
@@ -204,7 +203,15 @@ public class GameController : MonoBehaviour
     private bool allNpcAreGone()
     {
         GameObject[] enemiesOnScene = GameObject.FindGameObjectsWithTag("NPC");
-        return enemiesOnScene.Length == 0;
+        int enemiesCount = enemiesOnScene.Length;
+        while (enemiesCount-- > 0)
+        {
+            if (enemiesOnScene[enemiesCount].GetComponent<BossController>().getHealth() > 0)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     void Start()
@@ -232,7 +239,6 @@ public class GameController : MonoBehaviour
         PlayerController.OnHitEnemyRocket -= ProcessRocketHitsPlayer;
     }
 
-    // Update is called once per frame
     void Update()
     {
         ProcessKeyCommands();

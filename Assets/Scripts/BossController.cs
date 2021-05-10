@@ -5,7 +5,6 @@ using System.Timers;
 
 public class BossController : NPC, IDestroyVfx
 {
-    // Start is called before the first frame update
     public int initialHealth = 100;
     public GameObject dieVFX;
     public GameObject rocket;
@@ -31,7 +30,7 @@ public class BossController : NPC, IDestroyVfx
     IEnumerator SpawnRocket(int from, int to)
     {
         yield return new WaitForSeconds(Random.Range(from, to));
-        if (player == null && GameController.playerInstance == null)
+        if ((player == null && GameController.playerInstance == null) || getHealth() <= 0)
         {
             yield break;
         } else
@@ -63,10 +62,9 @@ public class BossController : NPC, IDestroyVfx
         PrepareDestroyVfx();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        if (getHealth() <= 0)
         {
             TriggerDestroyVfx();
         }
