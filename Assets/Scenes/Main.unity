@@ -350,13 +350,7 @@ MonoBehaviour:
     type: 3}
   pickupHealthPrefab: {fileID: 4743170082339520021, guid: 0cea071bc3ef738478dfee2ae44d5c1d,
     type: 3}
-  vfxEnemyExplosionPrefab: {fileID: 8750741972574465388, guid: 912f4d50f9edea840babfe37ea9fb0b5,
-    type: 3}
-  vfxRocketExplosionPrefab: {fileID: 656146088206801210, guid: a605c8c20d9520742bc8bd6318c22d33,
-    type: 3}
   vfxCollisionPrefab: {fileID: 5806174997293907363, guid: a980156c063f7834f8133cadbd3f6a7c,
-    type: 3}
-  vfxCollisionHealthPickupPrefab: {fileID: 8750741972574465388, guid: f716f5751f7f448b5bb217c7d04b8ad8,
     type: 3}
   hitTextPrefab: {fileID: 437006781755811777, guid: 6c4f01b8c38a8ac4bae4891212b74ce7,
     type: 3}
@@ -1282,6 +1276,11 @@ PrefabInstance:
       propertyPath: m_Parameters.colorGradient.key1.r
       value: 0.83921576
       objectReference: {fileID: 0}
+    - target: {fileID: 608058184679527808, guid: 5799d958e0aedbd49bb2b54f172b0837,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7876734864065461045, guid: 5799d958e0aedbd49bb2b54f172b0837,
         type: 3}
       propertyPath: m_LinearDrag
@@ -1292,6 +1291,12 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7876734864065461066, guid: 5799d958e0aedbd49bb2b54f172b0837,
+        type: 3}
+      propertyPath: DieVfx
+      value: 
+      objectReference: {fileID: 656146088206801210, guid: a605c8c20d9520742bc8bd6318c22d33,
+        type: 3}
     - target: {fileID: 7876734864065461066, guid: 5799d958e0aedbd49bb2b54f172b0837,
         type: 3}
       propertyPath: shotImpulse
