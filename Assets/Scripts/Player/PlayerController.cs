@@ -210,11 +210,11 @@ public class PlayerController : MonoBehaviour
             }
             else if (targetTag == "Rocket")
             {
-                OnHitEnemyRocket?.Invoke(collision.transform.position);
                 if (!GameController.gameEnded)
                 {
                     OnHealthChange?.Invoke(reduceHealthBy(20));
                 }
+                OnHitEnemyRocket?.Invoke(collision.transform.position);
             }
             else if (targetTag == "pickup_health")
             {
