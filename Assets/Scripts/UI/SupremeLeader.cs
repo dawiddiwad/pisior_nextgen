@@ -14,12 +14,14 @@ public class SupremeLeader : MonoBehaviour
     {
         PlayerController.OnHitEnemyRocket += EnemyHit;
         GameController.OnGameEnd += GameOver;
+        GameController.onGameResume += Spawn;
     }
 
     private void OnDisable()
     {
         PlayerController.OnHitEnemyRocket -= EnemyHit;
         GameController.OnGameEnd -= GameOver;
+        GameController.onGameResume -= Spawn;
     }
 
     private void EnemyHit(Vector3 collisionPosition)
@@ -37,6 +39,14 @@ public class SupremeLeader : MonoBehaviour
         } else if (gameResult == GameController.GameResult.Won)
         {
             animator.SetTrigger("Win");
+        }
+    }
+
+    private void Spawn()
+    {
+        if (!GameController.gameEnded)
+        {
+            animator.SetTrigger("Spawn");
         }
     }
 }

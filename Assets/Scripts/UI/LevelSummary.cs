@@ -65,8 +65,6 @@ public class LevelSummary : MonoBehaviour
 
     private void MarkStarActive(GameObject star)
     {
-        _ = star.GetComponent<Animation>().Play("flashDick");
-        Image starImage = star.GetComponent<Image>();
-        starImage.color = new Color(starImage.color.r, starImage.color.g, starImage.color.b, 255);
+        star.GetComponent<Animator>().SetTrigger("GrantStar");
     }
 }
