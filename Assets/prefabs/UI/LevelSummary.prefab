@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6948638771858099509}
   - component: {fileID: 1822662257385743023}
   - component: {fileID: 8779295688091784265}
-  - component: {fileID: 6734845665255769780}
+  - component: {fileID: 3254540714553835648}
   m_Layer: 5
   m_Name: Star1
   m_TagString: Untagged
@@ -89,22 +89,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f8b7281f021fc4c8ce09a0e66b6ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!111 &6734845665255769780
-Animation:
+--- !u!95 &3254540714553835648
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2279185447376431864}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: b035838c475c8d3478bd6c59f704d512, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: b035838c475c8d3478bd6c59f704d512, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c14ca9db426a3aa449e9fcdfcaca3f6e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2379500860152807858
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +242,7 @@ GameObject:
   - component: {fileID: 8009889290414971776}
   - component: {fileID: 3656962928922361520}
   - component: {fileID: 8404847969403341042}
-  - component: {fileID: 126520903350901514}
+  - component: {fileID: 4768542577635385328}
   m_Layer: 5
   m_Name: Star3
   m_TagString: Untagged
@@ -304,22 +307,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!111 &126520903350901514
-Animation:
+--- !u!95 &4768542577635385328
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4317195583198979187}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: b035838c475c8d3478bd6c59f704d512, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: b035838c475c8d3478bd6c59f704d512, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c14ca9db426a3aa449e9fcdfcaca3f6e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4505677245973818044
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -72}
   m_SizeDelta: {x: 1500, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9066014235721957866
@@ -459,7 +465,7 @@ GameObject:
   - component: {fileID: 3999610566226465550}
   - component: {fileID: 9198492813293945106}
   - component: {fileID: 3678479628911316472}
-  - component: {fileID: 3462812741505697113}
+  - component: {fileID: 4740533105585409547}
   m_Layer: 5
   m_Name: Star2
   m_TagString: Untagged
@@ -524,19 +530,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!111 &3462812741505697113
-Animation:
+--- !u!95 &4740533105585409547
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6571094379205823527}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: b035838c475c8d3478bd6c59f704d512, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: b035838c475c8d3478bd6c59f704d512, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c14ca9db426a3aa449e9fcdfcaca3f6e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
